@@ -2,13 +2,14 @@ package com.kube.books;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.GenerationType;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import javax.persistence.*;
 import java.util.Objects;
 
-@Entity(name="books")
+@Entity
+@Table(name = "books")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Book {
     public Book(Long id, String title, Double price, String author) {
         this.id = id;
